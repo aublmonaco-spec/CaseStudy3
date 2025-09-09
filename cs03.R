@@ -48,7 +48,7 @@ messy_data <- tibble(
 #' 
 #' 3.  **Inspect the dataset**:
 #' Use `head()`, `str()`, and `summary()` to get an initial understanding of the data's structure and identify potential issues. **Add comments on lines beginning with `#`** to explain your observations.
-
+head(messy_data)
 #' 
 #' 
 #' ### Step 2: Handle Characters in Numeric Columns
