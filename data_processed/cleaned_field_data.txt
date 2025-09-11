@@ -1,0 +1,8 @@
+ID	ObservationDate	Temperature_C	Humidity_Percent	Site
+1	1/15/2023	15.2	70	North
+2	1/20/2023	18	NA	North
+3	1/25/2025	14.5	NA	South
+4	2/5/2023	NA	65	East
+5	NA	17.3	NA	West
+6	2/15/2023	20.1	80	North
+7	3/1/2023	NA	71	South
