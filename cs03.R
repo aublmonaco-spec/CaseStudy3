@@ -30,6 +30,7 @@
 
 # Load tidyverse for data manipulation
 library(tidyverse)
+library(readr)
 library(knitr)
 
 #' 
@@ -49,7 +50,26 @@ messy_data <- tibble(
 #' 3.  **Inspect the dataset**:
 #' Use `head()`, `str()`, and `summary()` to get an initial understanding of the data's structure and identify potential issues. **Add comments on lines beginning with `#`** to explain your observations.
 head(messy_data)
+str(messy_data)
+summary(messy_data)
 #' 
+#' 
+
+messy_data <- messy_data %>%
+  mutate(Temperature_C_v2 = as.numeric(Temperature_C)) %>%
+  mutate(ObservationDate = c(date1, date2, date3, date4, date5, date6, date7)) %>%
+  mutate(Site = recode(messy_data$Site, North = "North", nirth = "North", South = "South", East = "East", west = "West", NORTH = "North", Souther = "South")) %>%
+  mutate(Humidity_Percent = if_else(Humidity_Percent >= 0 & Humidity_Percent <= 100, Humidity_Percent, NA_real_))
+
+date1 <- ymd("2023-01-15")
+date2 <- mdy("Jan 20, 2023")
+date3 <- mdy("01/25/2025")
+date4 <- ymd("2023-02-05")
+date5 <- "NA"
+date6 <- ymd("2023-02-15")
+date7 <- mdy("03-01-2023")
+
+  
 #' 
 #' ### Step 2: Handle Characters in Numeric Columns
 #' 
