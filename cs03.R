@@ -56,7 +56,7 @@ summary(messy_data)
 #' 
 
 messy_data <- messy_data %>%
-  mutate(Temperature_C_v2 = as.numeric(Temperature_C)) %>%
+  mutate(Temperature_C = as.numeric(Temperature_C)) %>%
   mutate(ObservationDate = c(date1, date2, date3, date4, date5, date6, date7)) %>%
   mutate(Site = recode(messy_data$Site, North = "North", nirth = "North", South = "South", East = "East", west = "West", NORTH = "North", Souther = "South")) %>%
   mutate(Humidity_Percent = if_else(Humidity_Percent >= 0 & Humidity_Percent <= 100, Humidity_Percent, NA_real_))
